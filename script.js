@@ -5,8 +5,8 @@ const nextButton = document.getElementById("next");
 const trackList = document.getElementById("track-list");
 const playbar = document.getElementById("playbar");
 const volumeControl = document.getElementById("volume");
+const currentTrackDisplay = document.getElementById("current-track"); // New line to get the current track display element
 let isRepeating = false; // Variable to track repeat state
-
 
 // Track details
 const tracks = [
@@ -29,6 +29,7 @@ let currentTrackIndex = 0;
 function loadTrack(index) {
     audio.src = tracks[index].src;
     audio.load(); // Preload the audio
+    currentTrackDisplay.innerText = tracks[index].title; // Update the Now Playing section
 }
 
 // Function to populate track list
@@ -107,4 +108,3 @@ audio.addEventListener("timeupdate", () => {
 playbar.addEventListener("input", (event) => {
     audio.currentTime = (audio.duration * event.target.value) / 100; // Seek to the selected position
 });
-
