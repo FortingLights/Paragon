@@ -36,6 +36,16 @@ body {
     margin: 15px 0;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
+.now-playing {
+    margin: 20px 0;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.now-playing span {
+    font-weight: bold;
+    color: #f700ce; /* Highlight the current track title */
+}
 
 #track-list {
     list-style: none;
@@ -179,3 +189,11 @@ body {
     transform: scale(1.2);
 }
 
+.now-playing {
+    margin: 15px 0;
+    color: #fff; /* White text color */
+}
+
+.now-playing h2 {
+    font-size: 20px;
+}
