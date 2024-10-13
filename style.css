@@ -90,7 +90,7 @@ body {
 }
 
 .control-button:disabled {
-    background-color: #555;
+    background-color: #9703b5;
     cursor: not-allowed;
 }
 
