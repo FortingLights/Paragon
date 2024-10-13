@@ -5,8 +5,8 @@ const nextButton = document.getElementById("next");
 const trackList = document.getElementById("track-list");
 const playbar = document.getElementById("playbar");
 const volumeControl = document.getElementById("volume");
-const currentTrackDisplay = document.getElementById("current-track"); // New line to get the current track display element
-let isRepeating = false; // Variable to track repeat state
+const currentTrackDisplay = document.getElementById("current-track");
+let isRepeating = false;
 
 // Track details
 const tracks = [
@@ -29,7 +29,7 @@ let currentTrackIndex = 0;
 function loadTrack(index) {
     audio.src = tracks[index].src;
     audio.load(); // Preload the audio
-    currentTrackDisplay.innerText = tracks[index].title; // Update the Now Playing section
+    currentTrackDisplay.innerText = tracks[index].title; // Update Now Playing display
 }
 
 // Function to populate track list
@@ -75,19 +75,16 @@ nextButton.addEventListener("click", () => {
     playButton.innerHTML = "&#10074;&#10074;"; // Pause icon
 });
 
-// Preload next track
-function preloadNextTrack() {
-    const nextIndex = (currentTrackIndex + 1) % tracks.length;
-    const nextAudio = new Audio(tracks[nextIndex].src);
-    nextAudio.load();
-}
-
 // Autoplay next track when the current one ends
 audio.addEventListener('ended', () => {
-    preloadNextTrack(); // Preload the next track
-    currentTrackIndex = (currentTrackIndex + 1) % tracks.length; // Move to the next track
-    loadTrack(currentTrackIndex); // Load the next track
-    audio.play(); // Start playing the next track
+    if (!isRepeating) {
+        currentTrackIndex = (currentTrackIndex + 1) % tracks.length; // Move to the next track
+        loadTrack(currentTrackIndex); // Load the next track
+        audio.play(); // Start playing the next track
+    } else {
+        audio.currentTime = 0; // Replay the current track
+        audio.play();
+    }
 });
 
 // Load the first track on page load
@@ -101,10 +98,19 @@ volumeControl.addEventListener("input", (event) => {
 
 // Update Playbar
 audio.addEventListener("timeupdate", () => {
-    playbar.value = (audio.currentTime / audio.duration) * 100; // Update playbar position
+    if (audio.duration) {
+        playbar.value = (audio.currentTime / audio.duration) * 100; // Update playbar position
+    }
 });
 
 // Seek functionality for playbar
 playbar.addEventListener("input", (event) => {
     audio.currentTime = (audio.duration * event.target.value) / 100; // Seek to the selected position
+});
+
+// Error handling for audio
+audio.addEventListener("error", (e) => {
+    console.error("Error occurred while playing audio: ", e);
+    // Optionally load the next track on error
+    nextButton.click();
 });
