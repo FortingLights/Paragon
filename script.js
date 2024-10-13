@@ -10,17 +10,17 @@ let isRepeating = false; // Variable to track repeat state
 
 // Track details
 const tracks = [
-    { title: "Who We Are", src: "file:///D:/PBEATS%20SITE/Audio%20Files/Who%20We%20Are2.mp3" },
-    { title: "Maybe", src: "file:///D:/PBEATS%20SITE/Audio%20Files/Maybe.mp3" },
-    { title: "Fell Apart", src: "file:///D:/PBEATS%20SITE/Audio%20Files/Fell%20Apart.mp3" },
-    { title: "What Went Wrong? (Interlude)", src: "file:///D:/PBEATS%20SITE/Audio%20Files/What%20Went%20Wrong%20(Interlude).mp3" },
-    { title: "Lose Control", src: "file:///D:/PBEATS%20SITE/Audio%20Files/Lose%20Control.mp3" },
-    { title: "Legend Of Heartbreak", src: "file:///D:/PBEATS%20SITE/Audio%20Files/Legend%20Of%20Heartbreak.mp3" },
-    { title: "New Ways Pt 2.", src: "file:///D:/PBEATS%20SITE/Audio%20Files/New%20Ways%20pt%202..mp3" },
-    { title: "Strangers/Haters (Interlude)", src: "file:///D:/PBEATS%20SITE/Audio%20Files/Strangers,%20Haters.mp3" },
-    { title: "Last Message", src: "file:///D:/PBEATS%20SITE/Audio%20Files/Last%20Message.mp3" },
-    { title: "Never Go.", src: "file:///D:/PBEATS%20SITE/Audio%20Files/Never%20Go..mp3" },
-    { title: "Paragon", src: "file:///D:/PBEATS%20SITE/Audio%20Files/Paragon.mp3" }
+    { title: "Who We Are", src: "Audio Files/Who We Are2.mp3" },
+    { title: "Maybe", src: "Audio Files/Maybe.mp3" },
+    { title: "Fell Apart", src: "Audio Files/Fell Apart.mp3" },
+    { title: "What Went Wrong? (Interlude)", src: "Audio Files/What Went Wrong (Interlude).mp3" },
+    { title: "Lose Control", src: "Audio Files/Lose Control.mp3" },
+    { title: "Legend Of Heartbreak", src: "Audio Files/Legend Of Heartbreak.mp3" },
+    { title: "New Ways Pt 2.", src: "Audio Files/New Ways pt 2..mp3" },
+    { title: "Strangers/Haters (Interlude)", src: "Audio Files/Strangers, Haters.mp3" },
+    { title: "Last Message", src: "Audio Files/Last Message.mp3" },
+    { title: "Never Go.", src: "Audio Files/Never Go..mp3" },
+    { title: "Paragon", src: "Audio Files/Paragon.mp3" }
 ];
 
 let currentTrackIndex = 0;
