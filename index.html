@@ -9,24 +9,18 @@
 <body>
     <div id="album">
         <div class="album-cover">
-            <img src="ParagonCoverFinal.png"> <!-- Replace with your album cover image -->
+            <img src="ParagonCoverFinal.png" alt="Album Cover">
         </div>
         <h1 id="album-title">Phantom Heartbeats</h1>
-        <h1 id="album-title">Paragon</h1>
-        
-        <!-- Now Playing Section -->
-        <div class="now-playing">
-            <h2>Now Playing: <span id="current-track">None</span></h2>
-        </div>
-
+        <h2 id="now-playing">Now Playing: <span id="current-track">None</span></h2>
         <div id="track-list">
             <!-- Track items will be populated here -->
         </div>
-        
         <div class="controls">
             <button id="prev" class="control-button" aria-label="Previous Track">&#9664;&#9664;</button>
             <button id="play" class="control-button" aria-label="Play/Pause">&#9654;</button>
             <button id="next" class="control-button" aria-label="Next Track">&#9654;&#9654;</button>
+            <button id="shuffle" class="control-button" aria-label="Shuffle">&#8591;</button> <!-- Shuffle Button -->
         </div>
 
         <!-- Playbar for track progress -->
