@@ -1,12 +1,28 @@
+/* General body styling with gradient background */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #121212;
+    background: linear-gradient(120deg, #121212, #343a40, #1c1c1c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
     color: #ffffff;
     font-family: 'Arial', sans-serif;
+}
+
+/* Animation for the gradient background */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #album {
@@ -20,8 +36,8 @@ body {
 }
 
 .album-cover img {
-    width: 300px; /* Change as needed */
-    height: 300px; /* Change as needed */
+    width: 300px;
+    height: 300px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
@@ -36,6 +52,7 @@ body {
     margin: 15px 0;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
+
 .now-playing {
     margin: 20px 0;
     font-size: 1.2em;
@@ -45,6 +62,14 @@ body {
 .now-playing span {
     font-weight: bold;
     color: #f700ce; /* Highlight the current track title */
+}
+
+.now-playing h2 {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    color: #1db954; /* Bright green for the song name */
 }
 
 #track-list {
@@ -187,13 +212,4 @@ body {
 
 #volume::-moz-range-thumb:hover {
     transform: scale(1.2);
-}
-
-.now-playing {
-    margin: 15px 0;
-    color: #fff; /* White text color */
-}
-
-.now-playing h2 {
-    font-size: 20px;
 }
